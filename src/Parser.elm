@@ -1,23 +1,23 @@
-module Brainfuck exposing
+module Parser exposing
     ( Commands(..)
-    , parseBrainFuck
+    , parse
     )
 
 
 type Commands
-    = GoRight -- >
-    | GoLeft -- <
-    | Increment -- +
-    | Decrement -- -
-    | Print -- .
-    | Read -- ,
-    | LoopL -- [
-    | LoopR -- ]
-    | Comment Char -- anything else
+    = GoRight
+    | GoLeft
+    | Increment
+    | Decrement
+    | Print
+    | Read
+    | LoopL
+    | LoopR
+    | Comment Char
 
 
-parseBrainFuck : String -> List Commands
-parseBrainFuck code =
+parse : String -> List Commands
+parse code =
     let
         charToBf chr =
             case chr of
