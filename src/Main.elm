@@ -56,8 +56,8 @@ view : Model -> Html Msg
 view m =
     div []
         [ code [] [ pre [] [ text m.out ] ]
-        , input [ placeholder "Type here", onInput Replace ] []
-        , button [ onClick (Compile m.input) ] [ text "What's your name?" ]
+        , input [ placeholder "Type here your brainfuck code", onInput Replace ] []
+        , button [ onClick (Compile m.input) ] [ text "Compile!" ]
         ]
 
 
